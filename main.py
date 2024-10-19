@@ -1,8 +1,11 @@
 import sys
 import os
-from dotenv import load_dotenv
-load_dotenv()
+
 from atproto import Client
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def main():
     handle = os.environ.get("BSKY_HANDLE")
@@ -18,7 +21,8 @@ def main():
     # 投稿
     f = open("post.txt", "r")
     content = f.read()
-    post = client.send_post(content)
+    client.send_post(content)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
